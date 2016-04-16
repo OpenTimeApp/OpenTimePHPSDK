@@ -6,7 +6,7 @@
  * Time: 9:38 PM
  */
 
-require_once dirname(__DIR__).'/OpenTimeSDK/api/OpenTimeSDK.php';
+require_once dirname(__DIR__).'/src/api/OpenTimeSDK.php';
 require_once __DIR__.'/TestHelper.php';
 require_once __DIR__.'/test_config.php';
 

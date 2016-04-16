@@ -7,7 +7,7 @@
  * Time: 9:23 PM
  */
 
-require_once dirname(__DIR__).'/OpenTimeSDK/api/OTAPIRequest.php';
+require_once dirname(__DIR__).'/src/api/OTAPIRequest.php';
 
 class TestHelper {
 

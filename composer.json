@@ -1,5 +1,6 @@
 {
     "name": "opentime/opentimesdk",
+
     "autoload": {
       "files" : ["src/api/OpenTimeSDK.php"]
     },

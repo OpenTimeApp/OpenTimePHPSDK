@@ -5,7 +5,39 @@ PHP SDK for OpenTime REST API
 
 ## How to use ##
 
-        OpenTimeSDK::initService(' your api key here');
+### Composer ###
+Add the dependency to your composer.json
+
+    "require": {
+        "opentime/opentimesdk":"dev-master"
+    }
+
+Add the repository to your composer.json
+
+    "repositories": [
+          {
+            "type": "package",
+            "package": {
+              "name": "opentime/opentimesdk",
+              "version": "dev-master",
+              "source": {
+                "url": "https://github.com/OpenTimeApp/OpenTimePHPSDK.git",
+                "type": "git",
+                "reference": "master"
+              }
+            }
+          }
+        ]
+
+Update composer on the command line
+
+    composer update
+
+After you have it installed you can start using the service like so
+
+        OpenTimeSDK::initService(' your api key here ');
+
+To obtain an API key please contact Josh Woodcock at josh.woodcock@opentimeapp.com
 
 ### For http requests that require user authentication details ###
 
@@ -21,6 +53,6 @@ Then put your TESTING API key in tests/test_config.php. DO NOT put your live api
 
     $opentime_api_config = array();
 
-    $opentime_api_config['api_key'] = ' api key goes here';
+    $opentime_api_config['api_key'] = ' api key goes here ';
     $opentime_api_config['server']  = '';
 

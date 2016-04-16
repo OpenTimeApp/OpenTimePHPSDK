@@ -56,3 +56,6 @@ Then put your TESTING API key in tests/test_config.php. DO NOT put your live api
     $opentime_api_config['api_key'] = ' api key goes here ';
     $opentime_api_config['server']  = '';
 
+## License
+
+OpenTimePHPSDK is released under the MIT license. See LICENSE for details.

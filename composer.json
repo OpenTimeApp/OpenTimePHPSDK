@@ -1,6 +1,9 @@
 {
     "name": "opentime/opentimesdk",
 
+    "type": "vcs",
+    "url": "https://github.com/OpenTimeApp/OpenTimePHPSDK",
+
     "autoload": {
       "files" : ["src/api/OpenTimeSDK.php"]
     },

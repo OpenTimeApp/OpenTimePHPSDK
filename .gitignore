@@ -1,3 +1,4 @@
-**/tests/test_config.php
+tests/test_config.php
 
 .idea/workspace.xml
+vendor

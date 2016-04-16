@@ -11,7 +11,9 @@ require_once dirname(__DIR__).'/library/Request/Request.php';
 class OTAPIRequest extends OTRequest {
 
 	public function __construct($lstrURL, $lstrMethod, array $lobjData) {
-		parent::__construct($lstrURL, OpenTimeSDK::getReferrer(), $lstrMethod, $lobjData);
+
+		// We don't need the http referrer for API calls.
+		parent::__construct($lstrURL, '', $lstrMethod, $lobjData);
 
 		$this->setHeaderOption(OTConstant::API_KEY_NAME, OpenTimeSDK::getKey());
 		$this->setHeaderOption('V', OTConstant::API_VERSION);

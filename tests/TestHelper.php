@@ -41,7 +41,13 @@ class TestHelper {
 		
 		global $opentime_api_config;
 
-		return $opentime_api_config['api_key'];
+		$api_key = $opentime_api_config['api_key'];
+
+		if(!in_array(trim($api_key), array('api key goes here', ''))){
+			return $api_key;
+		}else{
+			throw new Exception('You must set your OpenTime api key in tests/test_config.php');
+		}
 	}
 
 }

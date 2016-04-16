@@ -20,10 +20,9 @@ class OpenTimeSDK {
 	/**
 	 * @param string  $api_key
 	 * @param boolean $in_test_mode
-	 * @param string  $default_referrer
 	 */
-	public static function initService($api_key, $in_test_mode, $default_referrer) {
-		self::$_service = new OpenTimeSDK($api_key, $in_test_mode, $default_referrer);
+	public static function initService($api_key, $in_test_mode = false) {
+		self::$_service = new OpenTimeSDK($api_key, $in_test_mode);
 	}
 
 	/**
@@ -68,11 +67,6 @@ class OpenTimeSDK {
 	 */
 	private $_encryptedPassword;
 
-	/**
-	 * @var string
-	 */
-	private $_defaultReferrer;
-
 	//endregion
 
 	//region: Constructor
@@ -82,14 +76,12 @@ class OpenTimeSDK {
 	 *
 	 * @param string  $api_key
 	 * @param boolean $in_test_mode
-	 * @param string  $default_referrer
 	 */
-	public function __construct($api_key, $in_test_mode, $default_referrer) {
+	public function __construct($api_key, $in_test_mode) {
 
 		$this->_userID            = null;
 		$this->_encryptedPassword = null;
 
-		$this->_defaultReferrer = $default_referrer;
 		$this->_apiKey          = $api_key;
 		$this->_inTestMode      = $in_test_mode;
 		$this->_server          = $in_test_mode ? OTConstant::TEST_SERVER : OTConstant::LIVE_SERVER;
@@ -119,15 +111,6 @@ class OpenTimeSDK {
 		}
 
 		return $endpoint;
-	}
-
-	/**
-	 * @return string
-	 *
-	 * @throws Exception
-	 */
-	public static function getReferrer() {
-		return self::getService()->_defaultReferrer;
 	}
 
 	/**

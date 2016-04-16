@@ -9,6 +9,7 @@ PHP SDK for OpenTime REST API
 Add the dependency to your composer.json
 
     "require": {
+        "... other libraries": "... other version",
         "opentime/opentimesdk":"dev-master"
     }
 
@@ -16,16 +17,8 @@ Add the repository to your composer.json
 
     "repositories": [
           {
-            "type": "package",
-            "package": {
-              "name": "opentime/opentimesdk",
-              "version": "dev-master",
-              "source": {
-                "url": "https://github.com/OpenTimeApp/OpenTimePHPSDK.git",
-                "type": "git",
-                "reference": "master"
-              }
-            }
+            "type": "vcs",
+            "url": "https://github.com/OpenTimeApp/OpenTimePHPSDK"
           }
         ]
 

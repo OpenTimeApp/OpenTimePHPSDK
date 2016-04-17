@@ -24,7 +24,7 @@ class OTAPIResponse {
 			if(json_last_error() === JSON_ERROR_NONE) {
 				$this->message = $response_data->message;
 			} else {
-				$this->message = 'Could not parse response. Unknown server error';
+				$this->message = $response->file;
 			}
 		}
 	}

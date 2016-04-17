@@ -18,16 +18,20 @@ require_once 'InvalidMethodException.php';
 require_once 'InvalidProxyProviderException.php';
 require_once 'ProxyProvider' . DIRECTORY_SEPARATOR . 'I_ProxyProvider.php';
 
-$lstrCookieFolder;
 
-if(DIRECTORY_SEPARATOR === '/')
-{
-	$lstrCookieFolder = '/tmp/';
-}else{
-	$lstrCookieFolder = 'C:\\tmp\\';
+if(!defined('COOKIE_FOLDER')) {
+	
+	$lstrCookieFolder;
+
+	if(DIRECTORY_SEPARATOR === '/')
+	{
+		$lstrCookieFolder = '/tmp/';
+	}else{
+		$lstrCookieFolder = 'C:\\tmp\\';
+	}
+
+	define('COOKIE_FOLDER', $lstrCookieFolder);
 }
-
-define('COOKIE_FOLDER', $lstrCookieFolder);
 
 /**
  * Request.

@@ -55,6 +55,7 @@ class OTAPIResponse {
 			401 => false,
 			403 => false,
 			404 => false,
+			420 => false,
 			422 => false
 		);
 

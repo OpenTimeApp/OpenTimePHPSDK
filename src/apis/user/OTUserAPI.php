@@ -22,6 +22,11 @@ class OTUserAPI {
 	 */
 	public static function login(OTLoginRequest $request){
 
+		$validInputs = $request->checkInputs();
+		if(!$validInputs->success) {
+			return $validInputs;
+		}
+
 		$request = new OTAuthorizedAPIRequest(
 			OpenTimeSDK::getEndpoint(self::API, self::METHOD_SIGN_IN_WITH_EMAIL),
 			'GET',

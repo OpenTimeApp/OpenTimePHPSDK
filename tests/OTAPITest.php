@@ -15,6 +15,7 @@ class OTAPITest extends PHPUnit_Framework_TestCase {
 	public function setUp() {
 		parent::setUp();
 		OpenTimeSDK::initService(TestHelper::getAPIKey(), true);
+		OpenTimeSDK::getService()->setServer(TestHelper::getTestServer());
 		OpenTimeSDK::getService()->setPlainTextCredentials(1, 'I love testing');
 	}
 

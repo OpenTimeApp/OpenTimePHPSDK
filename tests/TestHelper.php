@@ -50,4 +50,17 @@ class TestHelper {
 		}
 	}
 
+	public static function getTestServer(){
+
+		global $opentime_api_config;
+
+		$api_key = $opentime_api_config['server'];
+
+		if(!in_array(trim($api_key), array('server goes here', ''))){
+			return $api_key;
+		}else{
+			throw new Exception('You must set your OpenTime test server in tests/test_config.php');
+		}
+	}
+
 }

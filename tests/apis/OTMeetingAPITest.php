@@ -12,7 +12,7 @@ require_once dirname(dirname(__DIR__)).'/src/apis/meeting/OTMeetingAPI.php';
 
 class OTMeetingAPITest extends OTAPITest {
 
-	public function testThis() {
+	public function testCreateMeeting() {
 
 		$restore_data_response = TestHelper::getDataResetResponse(['make_users', 'make_meetings'], true);
 

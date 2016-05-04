@@ -13,24 +13,22 @@ require_once __DIR__ . '/login/OTLoginResponse.php';
 class OTUserAPI {
 
 	const API = 'person';
-	const METHOD_SIGIN_WITH_EMAIL = 'signInWithEmail';
+	const METHOD_SIGN_IN_WITH_EMAIL = 'signInWithEmail';
 
 	/**
 	 * @param OTLoginRequest $request
 	 *
-	 * @return OTLoginRespoonse
+	 * @return OTLoginResponse
 	 */
 	public static function login(OTLoginRequest $request){
 
 		$request = new OTAuthorizedAPIRequest(
-			OpenTimeSDK::getEndpoint(self::API, self::METHOD_SIGIN_WITH_EMAIL),
+			OpenTimeSDK::getEndpoint(self::API, self::METHOD_SIGN_IN_WITH_EMAIL),
 			'GET',
 			$request->getParameters()
 		);
 
-		$request->makeJSONRequest();
-
-		$response = new OTLoginRespoonse($request->getResponse());
+		$response = new OTLoginResponse($request->getResponse());
 
 		return $response;
 	}

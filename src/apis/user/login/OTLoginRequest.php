@@ -12,9 +12,12 @@ class OTLoginRequest {
 	}
 
 	public function getParameters() {
+
+		$encrypted_password = OTPasswordHelper::encryptPlainTextPassword($this->_password);
+
 		$arr = array(
 			'email' => $this->_email,
-			'password' => $this->_password,
+			'password' => $encrypted_password,
 		);
 
 		return $arr;

@@ -11,12 +11,12 @@ class OTUserAPITest extends OTAPITest {
 
 		$this->assertTrue($restore_data_response->success, $restore_data_response->message);
 
-		$request = new OTLoginRequest('tester1@app.opentimeapp.com', '089f6725f4e6ae34621c51ec895ce45c');
+		$request = new OTLoginRequest('tester1@app.opentimeapp.com', 'I love testing');
 
 		$response = OTUserAPI::login($request);
 
 		$this->assertTrue($response->success, $response->message);
-		$this->assertEquals(1, $response->getUserData()->getUserID());
+		$this->assertEquals(1, $response->getUserData()->getPerson()->getUserId());
 	}
 
 }

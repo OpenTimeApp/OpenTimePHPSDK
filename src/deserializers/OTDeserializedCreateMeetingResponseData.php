@@ -8,12 +8,23 @@
 
 class OTDeserializedCreateMeetingResponseData {
 
+	/**
+	 * @var integer
+	 */
 	private $_meetingID;
 
+	/**
+	 * OTDeserializedCreateMeetingResponseData constructor.
+	 *
+	 * @param $data stdClass
+	 */
 	public function __construct($data) {
 		$this->_meetingID = $data->id;
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getMeetingID(){
 		return $this->_meetingID;
 	}

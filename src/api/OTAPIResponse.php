@@ -12,21 +12,38 @@ class OTAPIResponse {
 	public $message;
 	public $data;
 
-	public function __construct(OTResponse $response) {
+	public function __construct(OTResponse $response = null) {
 
-		if($this->_isStatusSuccessful($response->status['http_code'])) {
-			$this->_parseResponseFile($response->file);
-		} else {
-			$this->success = false;
+		if($response != null) {
 
-			$response_data = json_decode($response->file);
-
-			if(json_last_error() === JSON_ERROR_NONE) {
-				$this->message = $response_data->message;
+			if ($this->_isStatusSuccessful($response->status['http_code'])) {
+				$this->_parseResponseFile($response->file);
 			} else {
-				$this->message = $response->file;
+				$this->success = false;
+
+				$response_data = json_decode($response->file);
+
+				if (json_last_error() === JSON_ERROR_NONE) {
+					$this->message = $response_data->message;
+				} else {
+					$this->message = $response->file;
+				}
 			}
 		}
+	}
+
+	/**
+	 * @param $success
+	 * @param $message
+	 * @param null $data
+	 * @return OTAPIResponse
+	 */
+	public static function create($success, $message, $data=null) {
+		$response = new OTAPIResponse();
+		$response->success = $success;
+		$response->message = $message;
+		$response->data = $data;
+		return $response;
 	}
 
 	private function _parseResponseFile($file) {

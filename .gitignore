@@ -2,3 +2,4 @@ tests/test_config.php
 
 .idea/workspace.xml
 vendor
+*.DS_Store

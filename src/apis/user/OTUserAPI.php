@@ -27,7 +27,7 @@ class OTUserAPI {
 			return $validInputs;
 		}
 
-		$request = new OTAuthorizedAPIRequest(
+		$request = new OTAPIRequest(
 			OpenTimeSDK::getEndpoint(self::API, self::METHOD_SIGN_IN_WITH_EMAIL),
 			'GET',
 			$request->getParameters()

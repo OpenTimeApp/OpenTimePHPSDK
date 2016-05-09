@@ -6,6 +6,7 @@ class OTDeserializedUserInvite {
 	private $_email;
 	private $_lastInvitedAt;
 	private $_declinedAt;
+	private $_status;
 
 	/**
 	 * OTDeserializedUserInvite constructor.
@@ -13,10 +14,11 @@ class OTDeserializedUserInvite {
 	 * @param $data stdClass
 	 */
 	public function __construct($data) {
-		$this->_orgId = $data->org_id;
-		$this->_email = $data->email;
-		$this->_lastInvitedAt = $data->last_invited_at;
-		$this->_declinedAt = $data->declined_at;
+		$this->_orgId = isset($data->org_id) ? $data->org_id : null;
+		$this->_email = isset($data->email) ? $data->email : null;
+		$this->_lastInvitedAt = isset($data->last_invited_at) ? $data->last_invited_at : null;
+		$this->_declinedAt = isset($data->declined_at) ? $data->declined_at : null;
+		$this->_status = isset($data->status) ? $data->status : null;
 	}
 
 	/**
@@ -49,6 +51,13 @@ class OTDeserializedUserInvite {
 	public function getDeclinedAt()
 	{
 		return $this->_declinedAt;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getStatus() {
+		return $this->_status;
 	}
 
 }

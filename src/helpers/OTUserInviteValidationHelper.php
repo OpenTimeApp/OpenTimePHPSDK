@@ -4,6 +4,19 @@ require_once 'OTPersonValidationHelper.php';
 
 class OTUserInviteValidationHelper {
 
+	public static function validateGetInviteStatusInputs($emails, $org_id) {
+		if(empty(trim($emails))) {
+			return OTAPIResponse::create(false, "emails field is required.");
+		}
+
+		$validOrgId = self::_validOrgId($org_id);
+		if($validOrgId->success == false) {
+			return $validOrgId;
+		}
+
+		return OTAPIResponse::create(true, "");
+	}
+
 	/**
 	 * @param $email
 	 * @param $org_id

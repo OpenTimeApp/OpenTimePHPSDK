@@ -20,11 +20,13 @@ class OTOrganizationAPI {
 			return $validInputs;
 		}
 
-		$request = new OTAPIRequest(
+		$request = new OTAuthorizedAPIRequest(
 			OpenTimeSDK::getEndpoint(self::API, self::METHOD_GET_INVITE_STATUS_OF_EMAILS),
 			'GET',
 			$request->getParameters()
 		);
+
+		$request->makeJSONRequest();
 
 		$response = new OTUserInviteStatusResponse($request->getResponse());
 
@@ -38,7 +40,7 @@ class OTOrganizationAPI {
 			return $validInputs;
 		}
 
-		$request = new OTAPIRequest(
+		$request = new OTAuthorizedAPIRequest(
 			OpenTimeSDK::getEndpoint(self::API, self::METHOD_INVITE),
 			'POST',
 			$request->getParameters()

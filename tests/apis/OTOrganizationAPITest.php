@@ -9,7 +9,7 @@ class OTOrganizationAPITest extends OTAPITest {
 
 		$request = new OTUserInviteRequest('tester1@app.opentime.com test2@gmail.com', 1);
 		$response = OTOrganizationAPI::invite($request);
-		$this->assertTrue($response->success);
+		$this->assertTrue($response->success, $response->message);
 	}
 
 }

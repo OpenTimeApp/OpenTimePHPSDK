@@ -23,7 +23,7 @@ class OTCreateMeetingRequest {
 	 * @param integer        $start
 	 * @param integer        $end
 	 * @param integer        $created
-	 * @param array(integer) $attendees
+	 * @param array(integer|array) $attendees Can be array of user_ids OR array containing attendee details.
 	 */
 	public function __construct($org_id, $creator, $start, $end, $created, $attendees) {
 		$this->_orgID     = $org_id;

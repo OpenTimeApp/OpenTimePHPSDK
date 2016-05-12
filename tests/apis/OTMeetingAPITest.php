@@ -22,14 +22,32 @@ class OTMeetingAPITest extends OTAPITest {
 		$end     = $start + 3600;
 		$created = time();
 
+		$meeting_attendees = [
+			['user_id' => 1, 'status' => 6, 'first_accepted' => 1458246858],
+			['user_id' => 2, 'status' => 6, 'first_accepted' => 1458246858],
+		];
+
 		$request = new OTCreateMeetingRequest(
-			1, 1, $start, $end, $created, [1, 2]
+			1, 1, $start, $end, $created, $meeting_attendees
 		);
 
 		$response = OTMeetingAPI::create($request);
 
 		$this->assertTrue($response->success, $response->message);
 		$this->assertEquals(2, $response->getMeetingData()->getMeetingID());
+
+
+
+
+
+		$request = new OTCreateMeetingRequest(
+			1, 1, $start, $end, $created, [1,2]
+		);
+
+		$response = OTMeetingAPI::create($request);
+
+		$this->assertTrue($response->success, $response->message);
+		$this->assertEquals(3, $response->getMeetingData()->getMeetingID());
 	}
 
 }

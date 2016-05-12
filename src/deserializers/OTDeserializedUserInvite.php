@@ -14,42 +14,38 @@ class OTDeserializedUserInvite {
 	 * @param $data stdClass
 	 */
 	public function __construct($data) {
-		$this->_orgId = isset($data->org_id) ? $data->org_id : null;
-		$this->_email = isset($data->email) ? $data->email : null;
-		$this->_lastInvitedAt = isset($data->last_invited_at) ? $data->last_invited_at : null;
-		$this->_declinedAt = isset($data->declined_at) ? $data->declined_at : null;
-		$this->_status = isset($data->status) ? $data->status : null;
+		$this->_orgId         = isset($data->org_id) ? $data->org_id : null;
+		$this->_email         = isset($data->email) ? $data->email : null;
+		$this->_lastInvitedAt = isset($data->last_invited_at) ? $data->last_invited_at : 0;
+		$this->_declinedAt    = isset($data->declined_at) ? $data->declined_at : 0;
+		$this->_status        = isset($data->status) ? $data->status : null;
 	}
 
 	/**
 	 * @return int
-	 */
-	public function getOrgId()
-	{
-		return $this->_orgId;
-	}
-
-	/**
+	 *
+	 * public function getOrgId() {
+	 * return $this->_orgId;
+	 * }
+	 *
+	 * /**
 	 * @return string
 	 */
-	public function getEmail()
-	{
+	public function getEmail() {
 		return $this->_email;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getLastInvitedAt()
-	{
+	public function getLastInvitedAt() {
 		return $this->_lastInvitedAt;
 	}
 
 	/**
 	 * @return int
 	 */
-	public function getDeclinedAt()
-	{
+	public function getDeclinedAt() {
 		return $this->_declinedAt;
 	}
 

@@ -22,7 +22,7 @@ class OTOrganizationAPI {
 
 		$request = new OTAuthorizedAPIRequest(
 			OpenTimeSDK::getEndpoint(self::API, self::METHOD_GET_INVITE_STATUS_OF_EMAILS),
-			'GET',
+			'POST',
 			$request->getParameters()
 		);
 

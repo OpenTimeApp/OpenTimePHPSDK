@@ -5,6 +5,12 @@ require_once dirname(dirname(__DIR__)).'/src/apis/organization/OTOrganizationAPI
 
 class OTOrganizationAPITest extends OTAPITest {
 
+	public function testGetInviteStatus(){
+		$request = new OTUserInviteStatusRequest('tester1@app.opentime.com', 1);
+		$response = OTOrganizationAPI::getInviteStatusOfEmails($request);
+		$this->assertTrue($response->success, $response->message);
+	}
+
 	public function testInvite() {
 
 		$request = new OTUserInviteRequest('tester1@app.opentime.com test2@gmail.com', 1);

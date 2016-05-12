@@ -5,6 +5,7 @@ require_once __DIR__ . '/invite/OTUserInviteStatusRequest.php';
 require_once __DIR__ . '/invite/OTUserInviteStatusResponse.php';
 require_once __DIR__ . '/invite/OTUserInviteRequest.php';
 require_once __DIR__ . '/invite/OTUserInviteResponse.php';
+require_once __DIR__ . '/invite/OTUserOrgInviteStatus.php';
 
 class OTOrganizationAPI {
 

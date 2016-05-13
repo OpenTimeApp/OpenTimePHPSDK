@@ -46,5 +46,9 @@ class OTDeserializedUserInvite {
 	public function getStatus() {
 		return $this->_status;
 	}
+	
+	public function couldBeInvited(){
+		return $this->getStatus() == OTUserOrgInviteStatus::UNINVITED_AND_NOT_OPENTIME_USER || $this->getStatus() == OTUserOrgInviteStatus::UNINVITED_BUT_OPENTIME_USER;
+	}
 
 }

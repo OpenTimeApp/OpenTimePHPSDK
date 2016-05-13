@@ -28,7 +28,6 @@ class OTUserAPITest extends OTAPITest {
 		$request = new OTRejectUserInviteRequest('tester1@app.opentime.com', 1);
 		$response = OTUserAPI::rejectInvite($request);
 		$this->assertTrue($response->success, $response->message);
-		$this->assertEquals(1, $response->getUserInviteData()->getOrgId());
 	}
 
 	public function testAcceptInvite() {

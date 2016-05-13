@@ -50,12 +50,18 @@ class OTAPIResponse {
 		$response_data = json_decode($file);
 
 		if(json_last_error() === JSON_ERROR_NONE) {
+
 			if(isset($response_data->data)) {
 				$this->data = $response_data->data;
 			}
 
-			$this->success = $response_data->success;
-			$this->message = $response_data->message;
+			if(isset($response_data->success) && isset($response_data->message)){
+				$this->success = $response_data->success;
+				$this->message = $response_data->message;
+			}else{
+				$this->message = 'Could not parse JSON response';
+				$this->success = false;
+			}
 		} else {
 			$this->success = false;
 			$this->message = 'Could not parse JSON response';

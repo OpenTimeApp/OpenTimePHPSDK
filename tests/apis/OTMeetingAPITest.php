@@ -36,12 +36,16 @@ class OTMeetingAPITest extends OTAPITest {
 		$this->assertTrue($response->success, $response->message);
 		$this->assertEquals(2, $response->getMeetingData()->getMeetingID());
 
-
-
-
-
 		$request = new OTCreateMeetingRequest(
 			1, 1, $start, $end, $created, [1,2]
+		);
+
+		$response = OTMeetingAPI::create($request);
+
+		$this->assertFalse($response->success);
+
+		$request = new OTCreateMeetingRequest(
+			1, 1, $start + 3600, $end + 3600, $created, [1,2]
 		);
 
 		$response = OTMeetingAPI::create($request);

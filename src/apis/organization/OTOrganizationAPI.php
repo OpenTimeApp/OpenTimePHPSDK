@@ -47,6 +47,8 @@ class OTOrganizationAPI {
 			$request->getParameters()
 		);
 
+		$request->makeJSONRequest();
+
 		$response = new OTUserInviteResponse($request->getResponse());
 
 		return $response;

@@ -11,6 +11,13 @@ class OTOrganizationAPITest extends OTAPITest {
 		$this->assertTrue($response->success, $response->message);
 	}
 
+	public function testGetInviteStatusWithEmptyRequest(){
+		$request = new OTUserInviteStatusRequest(',', 1);
+		$response = OTOrganizationAPI::getInviteStatusOfEmails($request);
+		$this->assertTrue($response->success, $response->message);
+		$this->assertTrue(is_array($response->data));
+	}
+
 	public function testInvite() {
 
 		$request = new OTUserInviteRequest('tester1@app.opentime.com test2@gmail.com', 1);

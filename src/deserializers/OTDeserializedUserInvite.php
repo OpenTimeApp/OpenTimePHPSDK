@@ -48,7 +48,11 @@ class OTDeserializedUserInvite {
 	}
 	
 	public function couldBeInvited(){
-		return $this->getStatus() == OTUserOrgInviteStatus::UNINVITED_AND_NOT_OPENTIME_USER || $this->getStatus() == OTUserOrgInviteStatus::UNINVITED_BUT_OPENTIME_USER;
+		return in_array($this->getStatus(), array(
+			OTUserOrgInviteStatus::UNINVITED_AND_NOT_OPENTIME_USER,
+			OTUserOrgInviteStatus::UNINVITED_BUT_OPENTIME_USER,
+			OTUserOrgInviteStatus::ALREADY_INVITED
+		));
 	}
 
 }

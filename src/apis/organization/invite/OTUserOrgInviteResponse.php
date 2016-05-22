@@ -2,7 +2,7 @@
 
 require_once dirname(dirname(dirname(__DIR__))).'/deserializers/OTDeserializedUserInviteResponseData.php';
 
-class OTUserInviteResponse extends OTAPIResponse {
+class OTUserOrgInviteResponse extends OTAPIResponse {
 
 	/**
 	 * @var OTDeserializedUserInviteResponseData

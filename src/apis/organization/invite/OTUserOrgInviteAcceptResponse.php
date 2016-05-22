@@ -1,8 +1,8 @@
 <?php
 
-require_once dirname(dirname(dirname(__DIR__))).'/deserializers/OTDeserializedUserInviteStatusResponseData.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/deserializers/OTDeserializedUserInvite.php';
 
-class OTUserInviteStatusResponse extends OTAPIResponse {
+class OTUserOrgInviteAcceptResponse extends OTAPIResponse {
 
 	/**
 	 * @var OTDeserializedUserInvite
@@ -20,7 +20,7 @@ class OTUserInviteStatusResponse extends OTAPIResponse {
 		$this->_deserializedData = null;
 
 		if($this->data !== null){
-			$this->_deserializedData = new OTDeserializedUserInviteStatusResponseData($this->data);
+			$this->_deserializedData = new OTDeserializedUserInvite($this->data);
 		}
 	}
 

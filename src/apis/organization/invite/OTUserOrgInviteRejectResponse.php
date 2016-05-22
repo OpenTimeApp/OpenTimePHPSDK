@@ -1,8 +1,8 @@
 <?php
 
-require_once dirname(dirname(dirname(__DIR__))).'/deserializers/OTDeserializedUserInvite.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/deserializers/OTDeserializedUserInvite.php';
 
-class OTRejectUserInviteResponse extends OTAPIResponse {
+class OTUserOrgInviteRejectResponse extends OTAPIResponse {
 
 	/**
 	 * @var OTDeserializedUserInvite

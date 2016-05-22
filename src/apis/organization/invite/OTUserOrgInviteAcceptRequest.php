@@ -1,7 +1,7 @@
 <?php
-require_once dirname(dirname(dirname(__DIR__ ))). '/helpers/OTUserInviteValidationHelper.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/helpers/OTUserInviteValidationHelper.php';
 
-class OTAcceptUserInviteRequest {
+class OTUserOrgInviteAcceptRequest {
 
 	private $_email;
 	private $_orgId;

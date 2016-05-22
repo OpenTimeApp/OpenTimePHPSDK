@@ -19,4 +19,8 @@ class OTAPITest extends PHPUnit_Framework_TestCase {
 		OpenTimeSDK::getService()->setPlainTextCredentials(1, 'I love testing');
 	}
 
+	public function testRun(){
+		$this->assertTrue(true);
+	}
+
 }

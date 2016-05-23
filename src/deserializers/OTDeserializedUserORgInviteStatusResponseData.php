@@ -13,7 +13,7 @@ class OTDeserializedUserOrgInviteStatusResponseData {
 		}
 	}
 
-	public function getUserOrgInviteStasuses() {
+	public function getUserOrgInviteStatuses() {
 		return $this->_userInviteStatuses;
 	}
 

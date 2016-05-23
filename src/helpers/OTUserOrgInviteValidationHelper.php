@@ -2,7 +2,7 @@
 require_once dirname(__DIR__) . '/api/OTAPIResponse.php';
 require_once 'OTPersonValidationHelper.php';
 
-class OTUserInviteValidationHelper {
+class OTUserOrgInviteValidationHelper {
 
 	public static function validateInviteInputs($emails, $org_id) {
 		return self::validateGetInviteStatusInputs($emails, $org_id);

@@ -1,6 +1,6 @@
 <?php
 
-class OTDeserializedUserInvite {
+class OTDeserializedUserOrgInvite {
 
 	private $_email;
 	private $_lastInvitedAt;
@@ -8,7 +8,7 @@ class OTDeserializedUserInvite {
 	private $_status;
 
 	/**
-	 * OTDeserializedUserInvite constructor.
+	 * OTDeserializedUserOrgInvite constructor.
 	 *
 	 * @param $data stdClass
 	 */

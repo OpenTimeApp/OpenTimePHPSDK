@@ -1,6 +1,6 @@
 <?php
 
-class OTDeserializedUserInviteResponseData {
+class OTDeserializedUserOrgInviteResponseData {
 
 	/**
 	 * @var array

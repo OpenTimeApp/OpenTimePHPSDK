@@ -60,9 +60,9 @@ class OTOrganizationAPI {
 	}
 
 	/**
-	 * @param OTRejectUserInviteRequest $request
+	 * @param OTUserOrgInviteRejectRequest $request
 	 *
-	 * @return OTAPIResponse|OTRejectUserInviteResponse
+	 * @return OTAPIResponse|OTUserOrgInviteRejectResponse
 	 */
 	public static function rejectInvite(OTUserOrgInviteRejectRequest $request) {
 		$validInputs = $request->checkInputs();
@@ -82,9 +82,9 @@ class OTOrganizationAPI {
 	}
 
 	/**
-	 * @param OTAcceptUserInviteRequest $request
+	 * @param OTUserOrgInviteAcceptRequest $request
 	 *
-	 * @return OTAPIResponse|OTRejectUserInviteResponse
+	 * @return OTAPIResponse|OTUserOrgInviteRejectResponse
 	 */
 	public static function acceptInvite(OTUserOrgInviteAcceptRequest $request) {
 		$validInputs = $request->checkInputs();

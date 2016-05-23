@@ -1,5 +1,5 @@
 <?php
-require_once dirname(dirname(dirname(__DIR__))) . '/helpers/OTUserInviteValidationHelper.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/helpers/OTUserOrgInviteValidationHelper.php';
 
 class OTUserOrgInviteRejectRequest {
 
@@ -13,7 +13,7 @@ class OTUserOrgInviteRejectRequest {
 	}
 
 	public function checkInputs() {
-		return OTUserInviteValidationHelper::validateRejectInviteInputs($this->_email, $this->_orgId);
+		return OTUserOrgInviteValidationHelper::validateRejectInviteInputs($this->_email, $this->_orgId);
 	}
 
 	public function getParameters() {

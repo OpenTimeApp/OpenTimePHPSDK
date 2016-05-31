@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(dirname(dirname(__DIR__))).'/deserializers/OTDeserializedUserOrgInviteResponseData.php';
+require_once dirname(dirname(dirname(__DIR__))) . '/deserializers/organization/invite/OTDeserializedUserOrgInviteResponseData.php';
 
 class OTUserOrgInviteResponse extends OTAPIResponse {
 

@@ -17,5 +17,9 @@ class OTAPIRequest extends OTRequest {
 
 		$this->setHeaderOption(OTConstant::API_KEY_NAME, OpenTimeSDK::getKey());
 		$this->setHeaderOption('V', OTConstant::API_VERSION);
+
+		if(OpenTimeSDK::getService()->disableMessaging()){
+			$this->setHeaderOption('Send-Messages', 'NO');
+		}
 	}
 }

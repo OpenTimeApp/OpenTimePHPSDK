@@ -7,7 +7,7 @@ class OTUserAPITest extends OTAPITest {
 
 	public function testLogin() {
 
-		$restore_data_response = TestHelper::getDataResetResponse(['make_users', 'make_meetings'], true);
+		$restore_data_response = OTSDKTestHelper::getDataResetResponse(['make_users', 'make_meetings'], true);
 
 		$this->assertTrue($restore_data_response->success, $restore_data_response->message);
 

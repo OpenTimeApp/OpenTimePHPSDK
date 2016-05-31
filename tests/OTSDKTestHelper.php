@@ -9,7 +9,7 @@
 
 require_once dirname(__DIR__).'/src/api/OTAPIRequest.php';
 
-class TestHelper {
+class OTSDKTestHelper {
 
 	/**
 	 * @param array   $script_names
@@ -17,7 +17,7 @@ class TestHelper {
 	 *
 	 * @return OTAPIResponse
 	 */
-	public static function getDataResetResponse(array $script_names, $reset_cache) {
+	public static function getDataResetResponse(array $script_names, $reset_cache=true) {
 
 		$scripts             = implode(',', $script_names);
 		$reset_cache_command = $reset_cache ? 'YES' : 'NO';

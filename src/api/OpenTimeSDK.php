@@ -62,6 +62,8 @@ class OpenTimeSDK {
 	 */
 	private $_userID;
 
+	private $_messagingDisabled;
+
 	/**
 	 * @var string
 	 */
@@ -79,6 +81,7 @@ class OpenTimeSDK {
 	 */
 	public function __construct($api_key, $in_test_mode) {
 
+		$this->_messagingDisabled = false;
 		$this->_userID            = null;
 		$this->_encryptedPassword = null;
 
@@ -174,6 +177,10 @@ class OpenTimeSDK {
 	public function setPlainTextCredentials($user_id, $plain_text_password) {
 		$this->_userID = $user_id;
 		$this->_encryptedPassword = OTPasswordHelper::encryptPlainTextPassword($plain_text_password);
+	}
+
+	public function disableMessaging(){
+		$this->_messagingDisabled = true;
 	}
 
 	//endregion

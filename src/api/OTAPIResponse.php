@@ -71,6 +71,7 @@ class OTAPIResponse {
 	private function _isStatusSuccessful($http_status_code) {
 
 		$status_map = array(
+			0   => false,
 			200 => true,
 			201 => true,
 			500 => false,

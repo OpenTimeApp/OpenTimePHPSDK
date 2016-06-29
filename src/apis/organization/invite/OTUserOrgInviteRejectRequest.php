@@ -3,13 +3,10 @@ require_once dirname(dirname(dirname(__DIR__))) . '/helpers/OTUserOrgInviteValid
 
 class OTUserOrgInviteRejectRequest {
 
-	private $_email;
-	private $_orgId;
+	private $_authKey;
 
-
-	public function __construct($email, $orgId) {
-		$this->_email = $email;
-		$this->_orgId = $orgId;
+	public function __construct($auth_key) {
+		$this->_authKey = $auth_key;
 	}
 
 	public function checkInputs() {
@@ -19,8 +16,7 @@ class OTUserOrgInviteRejectRequest {
 	public function getParameters() {
 
 		$arr = array(
-			'email' => $this->_email,
-			'org_id' => $this->_orgId,
+			'auth_key' => $this->_authKey,
 		);
 
 		return $arr;

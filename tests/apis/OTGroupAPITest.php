@@ -1,9 +1,9 @@
 <?php
 
-require_once dirname(__DIR__) . '/OTAPITest.php';
+require_once dirname(__DIR__) . '/OTAPITestParent.php';
 require_once dirname(dirname(__DIR__)).'/src/apis/group/OTGroupAPI.php';
 
-class OTGroupAPITest extends OTAPITest {
+class OTGroupAPITest extends OTAPITestParent {
 
 	public function setUp() {
 		parent::setUp();

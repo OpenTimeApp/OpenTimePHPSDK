@@ -7,10 +7,10 @@
  * Time: 9:14 PM
  */
 
-require_once dirname(__DIR__) . '/OTAPITest.php';
+require_once dirname(__DIR__) . '/OTAPITestParent.php';
 require_once dirname(dirname(__DIR__)).'/src/apis/meeting/OTMeetingAPI.php';
 
-class OTMeetingAPITest extends OTAPITest {
+class OTMeetingAPITest extends OTAPITestParent {
 
 	public function testCreateMeeting() {
 

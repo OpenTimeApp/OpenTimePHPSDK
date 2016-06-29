@@ -1,9 +1,9 @@
 <?php
 
-require_once dirname(__DIR__) . '/OTAPITest.php';
+require_once dirname(__DIR__) . '/OTAPITestParent.php';
 require_once dirname(dirname(__DIR__)).'/src/apis/user/OTUserAPI.php';
 
-class OTUserAPITest extends OTAPITest {
+class OTUserAPITest extends OTAPITestParent {
 
 	public function testLogin() {
 

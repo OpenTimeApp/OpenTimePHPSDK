@@ -47,7 +47,7 @@ class OTUserOrgInviteRequest {
 		$this->_message = trim($message);
 	}
 
-	public function subject($subject) {
+	public function setSubject($subject) {
 		$this->_subject = trim($subject);
 	}
 

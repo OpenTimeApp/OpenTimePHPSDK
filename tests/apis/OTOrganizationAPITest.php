@@ -20,14 +20,14 @@ class OTOrganizationAPITest extends OTAPITestParent {
 
 	public function testInviteWithUserAlreadyInOrg() {
 		OTSDKTestHelper::getDataResetResponse(array('make_users'));
-		$request = new OTUserOrgInviteRequest('tester1@app.opentimeapp.com test2@gmail.com', 1);
+		$request = new OTUserOrgInviteRequest('tester1@app.opentimeapp.com test2@gmail.com', 1, true);
 		$response = OTOrganizationAPI::invite($request);
 		$this->assertFalse($response->success, $response->message);
 	}
 
 	public function testInviteWithoutAlreadyInvitedEmail() {
 		OTSDKTestHelper::getDataResetResponse(array('clear_org_invites'));
-		$request = new OTUserOrgInviteRequest('test2@gmail.com', 1);
+		$request = new OTUserOrgInviteRequest('test2@gmail.com', 1, true);
 		$response = OTOrganizationAPI::invite($request);
 		$this->assertTrue($response->success, $response->message);
 	}

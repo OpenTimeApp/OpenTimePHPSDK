@@ -23,7 +23,7 @@ class OTAPIResponse {
 
 				$response_data = json_decode($response->file);
 
-				if (json_last_error() === JSON_ERROR_NONE) {
+				if (json_last_error() === JSON_ERROR_NONE && isset($response_data->message)) {
 					$this->message = $response_data->message;
 				} else {
 					$this->message = $response->file;

@@ -28,6 +28,13 @@ class OTOrganizationAPITest extends OTAPITestParent {
 	public function testInviteWithoutAlreadyInvitedEmail() {
 		OTSDKTestHelper::getDataResetResponse(array('clear_org_invites'));
 		$request = new OTUserOrgInviteRequest('test2@gmail.com', 1, true);
+		$request->setFromName('Jim');
+		$request->setFromEmail('jim@bim.co');
+		$request->setAcceptRedirect('http://accept.com');
+		$request->setDeclineRedirect('http://decline.com');
+		$request->setMakeManager(true);
+		$request->setNotifyEmail('sara@fara.wara');
+		$request->setMessageID(88);
 		$response = OTOrganizationAPI::invite($request);
 		$this->assertTrue($response->success, $response->message);
 	}

@@ -5,7 +5,7 @@ require_once __DIR__.'/OTDeserializedGroupInviteEvaluation.php';
 class OTDeserializedGroupInviteStatusResponseData {
 
 	/**
-	 * @var array OTDeserializedUserOrgInvite
+	 * @var array(OTDeserializedGroupInvite)
 	 */
 	private $_userInviteStatuses;
 
@@ -16,9 +16,9 @@ class OTDeserializedGroupInviteStatusResponseData {
 	}
 
 	/**
-	 * @return array(OTDeserializedUserOrgInvite)
+	 * @return array(OTDeserializedGroupInvite)
 	 */
-	public function getUserOrgInviteStatuses() {
+	public function getGroupInviteStatuses() {
 		return $this->_userInviteStatuses;
 	}
 

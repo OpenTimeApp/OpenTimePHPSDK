@@ -18,7 +18,7 @@ class OTGroupAPITest extends OTAPITestParent {
 		$response = OTGroupAPI::getInviteStatusOfEmails($request);
 		$this->assertTrue($response->success, $response->message);
 		
-		$invite_items = $response->getGroupInviteData()->getUserOrgInviteStatuses();
+		$invite_items = $response->getGroupInviteData()->getGroupInviteStatuses();
 
 		$this->assertCount(1, $invite_items);
 

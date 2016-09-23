@@ -35,7 +35,21 @@ class OTGroupAPITest extends OTAPITestParent {
 	}
 
 	public function testInvite() {
-		$request = new OTGroupInviteRequest('tester1@app.opentime.com test2@gmail.com', 1);
+		$request = new OTGroupInviteRequest('tester1@app.opentime.com test2@gmail.com', 1, true);
+
+		$request->setFromName('Jim');
+		$request->setFromEmail('jim@bim.co');
+		$request->setAcceptRedirect('http://accept.com');
+		$request->setDeclineRedirect('http://decline.com');
+		$request->setMakeManager(true);
+		$request->setNotifyEmail('sara@fara.wara');
+		$request->setMessageID(88);
+		$request->setAlsoInviteToOrg(true);
+		$request->setAcceptRedirect('http://google.com');
+		$request->setDeclineRedirect('http://yahoo.com');
+		$request->setNotifyEmail('abc@123.xyz');
+		$request->setUseDefaultMessage(false);
+
 		$response = OTGroupAPI::invite($request);
 		$this->assertTrue($response->success, $response->message);
 	}
@@ -58,6 +72,7 @@ class OTGroupAPITest extends OTAPITestParent {
 		$this->assertTrue($result->success, $result->message);
 
 		$request = new OTGroupInviteAcceptRequest(1, 'abc.123');
+
 		$response = OTGroupAPI::acceptInvite($request);
 		$this->assertTrue($response->success, $response->message);
 

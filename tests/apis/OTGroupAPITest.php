@@ -29,6 +29,7 @@ class OTGroupAPITest extends OTAPITestParent {
 
 	public function testGetInviteStatusWithEmptyRequest(){
 		$request = new OTGroupInviteStatusRequest(',', 1);
+		$request->setAlsoInviteToOrg(true);
 		$response = OTGroupAPI::getInviteStatusOfEmails($request);
 		$this->assertTrue($response->success, $response->message);
 		$this->assertTrue(is_array($response->data));

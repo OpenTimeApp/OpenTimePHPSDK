@@ -46,7 +46,8 @@ class OTDeserializedGroupInviteEvaluation {
 			$this->getStatus(), array(
 			OTGroupInviteEvaluationStatus::UNINVITED_AND_NOT_OPENTIME_USER,
 			OTGroupInviteEvaluationStatus::UNINVITED_BUT_OPENTIME_USER,
-			OTGroupInviteEvaluationStatus::ALREADY_INVITED
+			OTGroupInviteEvaluationStatus::ALREADY_INVITED,
+			OTGroupInviteEvaluationStatus::NOT_ORG_MEMBER_FOR_INTERNAL_GROUP
 		)
 		);
 	}

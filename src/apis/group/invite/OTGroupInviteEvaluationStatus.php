@@ -16,5 +16,6 @@ class OTGroupInviteEvaluationStatus {
 	const UNINVITED_BUT_OPENTIME_USER       = 6;
 	const INVALID_EMAIL                     = 7;
 	const NOT_ORG_MEMBER_FOR_INTERNAL_GROUP = 8;
+	const CANNOT_BE_INVITED                 = 9;
 
 }

@@ -59,12 +59,12 @@ class OTAPIResponse {
 				$this->success = $response_data->success;
 				$this->message = $response_data->message;
 			}else{
-				$this->message = 'Could not parse JSON response';
+				$this->message = $file;
 				$this->success = false;
 			}
 		} else {
 			$this->success = false;
-			$this->message = 'Could not parse JSON response';
+			$this->message = $file;
 		}
 	}
 

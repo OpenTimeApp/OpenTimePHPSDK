@@ -39,11 +39,11 @@ if(!defined('COOKIE_FOLDER')) {
 class OTRequest
 {
 	// Constants.
-	const DEFAULT_TIMEOUT_SECONDS = 30;
+	const DEFAULT_TIMEOUT_SECONDS = 120;
 	const TIMEOUT_MULIPLIER       = 10;
 	const AGENT_NAME              = 'Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US)';
 	const COOKIE_FILE             = 'cookie.txt';
-	const CURL_TIMEOUT            = 30;
+	const CURL_TIMEOUT            = 120;
 	const MAX_PROXY_RESPONSE_TIME = 5;
 	const MAX_SAFESEARCH_TIME     = 1;
 	const MIN_SAFESEARCH_TIME     = 0.5;

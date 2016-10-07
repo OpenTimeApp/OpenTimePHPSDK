@@ -6,6 +6,7 @@ require_once __DIR__ . '/invite/OTUserOrgInviteStatusResponse.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteRequest.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteResponse.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteStatus.php';
+require_once __DIR__ . '/invite/OTUserOrgInviteEvaluationStatus.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteRejectRequest.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteRejectResponse.php';
 require_once __DIR__ . '/invite/OTUserOrgInviteAcceptRequest.php';
@@ -76,6 +77,8 @@ class OTOrganizationAPI {
 			$request->getParameters()
 		);
 
+		$request->makeJSONRequest();
+
 		$response = new OTUserOrgInviteRejectResponse($request->getResponse());
 
 		return $response;
@@ -97,6 +100,8 @@ class OTOrganizationAPI {
 			'POST',
 			$request->getParameters()
 		);
+
+		$request->makeJSONRequest();
 
 		$response = new OTUserOrgInviteAcceptResponse($request->getResponse());
 

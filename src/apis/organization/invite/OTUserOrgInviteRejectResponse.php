@@ -24,7 +24,7 @@ class OTUserOrgInviteRejectResponse extends OTAPIResponse {
 		}
 	}
 
-	public function getUserOrgInviteData(){
+	public function getOrgInviteEvaluation(){
 		return $this->_deserializedData;
 	}
 }

@@ -22,14 +22,15 @@ class OTUserOrgInviteValidationHelper {
 	}
 
 	/**
-	 * @param $email
 	 * @param $org_id
+	 * @param $auth_key
+	 *
 	 * @return OTAPIResponse
 	 */
-	public static function validateRejectInviteInputs($email, $org_id) {
-		$validEmail = OTPersonValidationHelper::validEmail($email);
-		if($validEmail->success == false) {
-			return $validEmail;
+	public static function validateRejectInviteInputs($org_id, $auth_key) {
+
+		if(trim($auth_key) === ''){
+			return OTAPIResponse::create(true, 'Auth key cannot be blank');
 		}
 
 		$validOrgId = self::_validOrgId($org_id);
@@ -37,13 +38,13 @@ class OTUserOrgInviteValidationHelper {
 			return $validOrgId;
 		}
 
-		return OTAPIResponse::create(true, "");
+		return OTAPIResponse::create(true, '');
 	}
 
-	public static function validateAcceptInviteInputs($email, $org_id, $firstName=null, $lastName=null, $cellPhone=null, $password=null, $confirmPassword=null) {
-		$validEmail = OTPersonValidationHelper::validEmail($email);
-		if($validEmail->success == false) {
-			return $validEmail;
+	public static function validateAcceptInviteInputs($org_id, $auth_key) {
+
+		if(trim($auth_key) === ''){
+			return OTAPIResponse::create(false, 'Auth key cannot be blank');
 		}
 
 		$validOrgId = self::_validOrgId($org_id);
@@ -51,14 +52,7 @@ class OTUserOrgInviteValidationHelper {
 			return $validOrgId;
 		}
 
-		if($firstName != null) {
-			$validRegisterInputs = OTPersonValidationHelper::validateCreateInputs($email, $firstName, $lastName, $cellPhone, $password, $confirmPassword);
-			if($validRegisterInputs->success == false) {
-				return $validRegisterInputs;
-			}
-		}
-
-		return OTAPIResponse::create(true, "");
+		return OTAPIResponse::create(true, '');
 	}
 
 	/**

@@ -123,6 +123,24 @@ class OTUserOrgInviteRequest {
 		$this->_messageID = $message_id;
 	}
 
+	/**
+	 * @return boolean
+	 */
+	public function isUseDefaultMessage() {
+		return $this->_useDefaultMessage;
+	}
+
+	/**
+	 * @param boolean $useDefaultMessage
+	 *
+	 * @return OTGroupInviteRequest
+	 */
+	public function setUseDefaultMessage($useDefaultMessage) {
+		$this->_useDefaultMessage = $useDefaultMessage;
+
+		return $this;
+	}
+
 	public function checkInputs() {
 		return OTUserOrgInviteValidationHelper::validateGetInviteStatusInputs($this->_emails, $this->_orgId);
 	}

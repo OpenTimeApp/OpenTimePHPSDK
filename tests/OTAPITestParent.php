@@ -19,5 +19,4 @@ class OTAPITestParent extends PHPUnit_Framework_TestCase {
 		OpenTimeSDK::getService()->setPlainTextCredentials(1, 'I love testing');
 		OpenTimeSDK::getService()->disableMessaging();
 	}
-
 }

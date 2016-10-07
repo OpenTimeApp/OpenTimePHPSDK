@@ -8,11 +8,11 @@
 
 class OTUserOrgInviteStatus {
 
-	const ALREADY_IN_ORG                  = 1;
-	const ALREADY_INVITED                 = 2;
-	const DECLINED                        = 3;
+	const NO_RESPONSE                     = 0;
+	const ACCEPTED                        = 1;
+	const REJECTED                        = 2;
+	const ALREADY_IN_GROUP                = 3;
 	const UNINVITED_AND_NOT_OPENTIME_USER = 4;
 	const UNINVITED_BUT_OPENTIME_USER     = 5;
-	const INVALID_EMAIL                   = 6;
 
 }

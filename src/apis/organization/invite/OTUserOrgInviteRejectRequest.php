@@ -4,19 +4,23 @@ require_once dirname(dirname(dirname(__DIR__))) . '/helpers/OTUserOrgInviteValid
 class OTUserOrgInviteRejectRequest {
 
 	private $_authKey;
+	private $_orgId;
 
-	public function __construct($auth_key) {
+
+	public function __construct($orgId, $auth_key) {
+		$this->_orgId = $orgId;
 		$this->_authKey = $auth_key;
 	}
 
 	public function checkInputs() {
-		return OTUserOrgInviteValidationHelper::validateRejectInviteInputs($this->_email, $this->_orgId);
+		return OTUserOrgInviteValidationHelper::validateRejectInviteInputs($this->_orgId, $this->_authKey);
 	}
 
 	public function getParameters() {
 
 		$arr = array(
-			'auth_key' => $this->_authKey,
+			'email' => $this->_email,
+			'org_id' => $this->_orgId,
 		);
 
 		return $arr;

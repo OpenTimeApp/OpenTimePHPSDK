@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/OTDeserializedUserOrgInviteEvaluation.php';
+
 class OTDeserializedUserOrgInviteStatusResponseData {
 
 	/**
@@ -8,8 +10,8 @@ class OTDeserializedUserOrgInviteStatusResponseData {
 	private $_userInviteStatuses;
 
 	public function __construct($data) {
-		foreach($data as $status) {
-			$this->_userInviteStatuses[] = new OTDeserializedUserOrgInvite($status);
+		foreach($data as $evaluation) {
+			$this->_userInviteStatuses[] = new OTDeserializedUserOrgInviteEvaluation($evaluation);
 		}
 	}
 
